@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   suite.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/24 09:07:00 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/25 21:19:06 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/10/25 21:09:11 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/25 21:27:46 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+#include <stdio.h>
+#include "day02/ex00/ft_print_alphabet.c"
+#include "day02/ex01/ft_print_reverse_alphabet.c"
+#include "day02/ex02/ft_print_numbers.c"
+#include "day02/ex03/ft_is_negative.c"
+#include "day02/ex04/ft_print_comb.c"
+#include "day02/ex05/ft_print_comb2.c"
+#include "day02/ex06/ft_putnbr.c"
 
-void	ft_print_numbers(void)
+void	ft_putchar(char c)
 {
-	int number;
+	write(1, &c, 1);
+}
 
-	number = 0;
-	while (number < 10)
-	{
-		ft_putchar(number + '0');
-		number++;
-	}
+int		main(void)
+{
+	ft_putnbr(42);
+	return 0;
 }
