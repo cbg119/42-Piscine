@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 09:56:22 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/25 23:23:19 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/10/25 22:13:38 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_is_negative(int n)
 {
 	if (n >= 0)
 	{
-		ft_putchar('P');
+		ft_putchar('f');
 	}
 	else
 	{
