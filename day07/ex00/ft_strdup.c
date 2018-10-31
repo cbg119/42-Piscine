@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 12:06:31 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/27 14:35:04 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/10/30 16:36:34 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/30 17:30:00 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
+#include <stdlib.h>
+
+int				ft_strlen(char *str)
 {
-	if (index < 0)
+	int counter;
+
+	counter = 0;
+	while (*str != '\0')
 	{
-		return (-1);
+		str++;
+		counter++;
 	}
-	if (index == 0)
+	return (counter);
+}
+
+char			*ft_strdup(char *src)
+{
+	int			index;
+	char		*new_string;
+
+	new_string = malloc(ft_strlen(src) + 1);
+	if (!new_string)
+		return (NULL);
+	index = 0;
+	while (src[index] != '\0')
 	{
-		return (0);
+		new_string[index] = src[index];
+		index++;
 	}
-	if (index == 1)
-	{
-		return (1);
-	}
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	new_string[index] = '\0';
+	return (new_string);
 }

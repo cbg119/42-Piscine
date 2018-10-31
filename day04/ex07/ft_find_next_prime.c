@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 08:40:05 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/27 08:43:22 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/10/27 19:21:25 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ int		ft_is_prime(int nb)
 
 int		ft_find_next_prime(int nb)
 {
-	if (!ft_is_prime(nb))
+	while (1)
 	{
-		ft_find_next_prime(nb++);
+		if (ft_is_prime(nb++))
+		{
+			return (nb);
+		}
 	}
-	return (nb);
 }

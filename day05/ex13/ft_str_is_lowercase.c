@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:46:11 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 16:47:50 by ytsai            ###   ########.fr       */
+/*   Created: 2018/10/29 12:21:56 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/29 12:41:58 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
-
-int		main(void)
+int		ft_str_is_lowercase(char *str)
 {
-	rush(5, 5);
-	return (0);
+	int index;
+
+	index = 0;
+	while (str[index] != '\0')
+	{
+		if (!(str[index] >= 'a' && str[index] <= 'z'))
+			return (0);
+		index++;
+	}
+	return (1);
 }

@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:46:11 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 16:47:50 by ytsai            ###   ########.fr       */
+/*   Created: 2018/10/30 22:33:33 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/30 22:46:07 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+#include <stdlib.h>
 
-int		main(void)
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	rush(5, 5);
-	return (0);
+	int *result;
+	int counter;
+
+	if (min >= max)
+	{
+		*range = NULL;
+		return (0);
+	}
+	if (!(result = malloc(sizeof(int) * (max - min))))
+	{
+		result = (NULL);
+		return (0);
+	}
+	counter = -1;
+	while (max >= min)
+	{
+		result[max - min - 1] = max - 1;
+		max--;
+		++counter;
+	}
+	*range = result;
+	return (counter);
 }
