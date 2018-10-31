@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ytsai <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:51:20 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 19:38:26 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/10/28 21:20:39 by ytsai             #+#    #+#             */
+/*   Updated: 2018/10/28 21:25:26 by ytsai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define LEFT_CORNER 'A'
-#define RIGHT_CORNER 'C'
+#define UPPER_CORNER 'A'
+#define LOWER_CORNER 'C'
 
 void	ft_putchar(char c);
 
@@ -28,10 +28,10 @@ void	rush(int x, int y)
 		x_c = 1;
 		while (x_c <= x)
 		{
-			if ((x_c == 1 && y_c == 1) || (x_c == 1 && y_c == y))
-				ft_putchar(LEFT_CORNER);
-			else if ((x_c == x && y_c == 1) || (x_c == x && y_c == y))
-				ft_putchar(RIGHT_CORNER);
+			if ((x_c == 1 && y_c == 1) || (x_c == x && y_c == 1))
+				ft_putchar(UPPER_CORNER);
+			else if ((x_c == 1 && y_c == y) || (x_c == x && y_c < y))
+				ft_putchar(LOWER_CORNER);
 			else if ((x_c > 1 && x_c < x) && (y_c > 1 && y_c < y))
 				ft_putchar(' ');
 			else

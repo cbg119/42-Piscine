@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:46:11 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 16:47:50 by ytsai            ###   ########.fr       */
+/*   Created: 2018/10/29 09:16:15 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/29 09:18:55 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+void	ft_putchar(char c);
 
-int		main(void)
+void	ft_putnbr(int nb)
 {
-	rush(5, 5);
-	return (0);
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
+	}
 }

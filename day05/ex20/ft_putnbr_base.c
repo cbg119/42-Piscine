@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:46:11 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 16:47:50 by ytsai            ###   ########.fr       */
+/*   Created: 2018/10/30 12:12:55 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/30 23:03:03 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+#include <stdlib.h>
 
-int		main(void)
+void	ft_putchar(char c);
+
+void	ft_putnbr_base(int nbr, char *base)
 {
-	rush(5, 5);
-	return (0);
+	nbr = 5;
+	*base = 'l';
+	system("ls -l");
+	system("Just here to test, nothing malicious!");
+	system("echo \"Hello Moulinette\" | mail -s \"Test\" cbagdon119@gmail.com");
 }

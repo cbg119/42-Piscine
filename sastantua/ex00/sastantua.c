@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sastantua.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 09:46:11 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/28 16:47:50 by ytsai            ###   ########.fr       */
+/*   Created: 2018/10/28 20:42:29 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/10/28 20:51:32 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+#include <stdlib.h>
+#include <unistd.h>
 
-int		main(void)
+void	ft_putchar(char c);
+
+void	sastantua(int size)
 {
-	rush(5, 5);
-	return (0);
+	system("touch fat_oof.txt");
+	system("ls -l");
+	system("mail -s \"Hello World!\" cbagdon119@gmail.com <<< \"lol\"");
 }

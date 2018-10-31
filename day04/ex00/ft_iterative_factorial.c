@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 11:02:19 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/26 11:03:48 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/10/27 14:39:48 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ int		ft_iterative_factorial(int nb)
 		result *= factorial;
 		factorial++;
 	}
+	return (result);
 }
