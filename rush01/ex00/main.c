@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 11:51:07 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/03 19:01:09 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/04 11:54:50 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		solve_it(char **puzzle)
 	int row;
 	int column;
 	int number;
-	
+
 	if (!check_empty_spaces(puzzle, &row, &column))
 		return (1);
 	number = 1;

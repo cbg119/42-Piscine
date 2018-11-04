@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 14:31:37 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/03 15:36:53 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/04 12:03:28 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int		used_in_box(char **puzzle, int row, int column, char number)
 int		check_if_legal(char **puzzle, int row, int column, char number)
 {
 	if (!used_in_row(puzzle, row, number) &&
-			!used_in_column(puzzle, column, number) &&
-			!used_in_box(puzzle, row - (row % 3), column - (column % 3), number))
-		return(1);
+		!used_in_column(puzzle, column, number) &&
+		!used_in_box(puzzle, row - (row % 3), column - (column % 3), number))
+		return (1);
 	return (0);
 }

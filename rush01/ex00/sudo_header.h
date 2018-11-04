@@ -6,11 +6,11 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 11:17:54 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/03 18:19:55 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/04 11:53:36 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  SUDO_HEADER_H
+#ifndef SUDO_HEADER_H
 # define SUDO_HEADER_H
 
 # ifndef LENGTH
