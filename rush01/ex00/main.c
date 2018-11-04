@@ -6,7 +6,11 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 11:51:07 by cbagdon           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/11/04 11:54:50 by cbagdon          ###   ########.fr       */
+=======
+/*   Updated: 2018/11/03 19:01:09 by cbagdon          ###   ########.fr       */
+>>>>>>> e65f49bc41836153021ae46bbe2b6aec9ec5d192
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +21,11 @@ int		solve_it(char **puzzle)
 	int row;
 	int column;
 	int number;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e65f49bc41836153021ae46bbe2b6aec9ec5d192
 	if (!check_empty_spaces(puzzle, &row, &column))
 		return (1);
 	number = 1;
