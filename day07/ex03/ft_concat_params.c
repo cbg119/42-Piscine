@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 22:50:56 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/10/31 00:21:02 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/01 14:50:35 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_concat_params(int argc, char **argv)
 	int			mem_size;
 	int			counter;
 
-	counter = 0;
+	counter = 1;
 	mem_size = 0;
 	while (counter < argc)
 	{
