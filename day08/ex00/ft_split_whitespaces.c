@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 09:08:39 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/01 18:37:42 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/10/31 20:19:42 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int		is_word(char letter, char letterb)
 {
-	return ((letter >= 33 && letter <= 126) &&
+	return (((letter >= '0' && letter <= '9') ||
+			(letter >= 'a' && letter <= 'z') ||
+			(letter >= 'A' && letter <= 'Z')) &&
 			(letterb == ' ' || letterb == '\t' || letterb == '\n'));
 }
 
