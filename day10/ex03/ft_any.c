@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/04 00:42:01 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/04 13:00:37 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/04 12:44:13 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/04 13:00:19 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f) (int))
+ int	ft_any(char **tab, int (*f) (char*))
 {
 	int i;
 
 	i = 0;
-	while (i < length)
+	while (tab[i])
 	{
-		(*f)(tab[i]);
+		if ((*f)(tab[i]) == 1)
+			return (1);
 		i++;
 	}
+	return (0);
 }

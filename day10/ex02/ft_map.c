@@ -6,13 +6,13 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/04 00:53:48 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/04 00:59:29 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/04 12:58:22 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		*ft_map(int *tab, int length, int(*f) (int))
+int		*ft_map(int *tab, int length, int (*f) (int))
 {
 	int		i;
 	int		*result;
@@ -21,7 +21,7 @@ int		*ft_map(int *tab, int length, int(*f) (int))
 	i = 0;
 	while (i < length)
 	{
-		result[i] = ((*f) (tab[i]));
+		result[i] = ((*f)(tab[i]));
 		i++;
 	}
 	return (result);
