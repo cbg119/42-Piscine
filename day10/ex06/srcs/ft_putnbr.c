@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/04 12:44:13 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/04 23:56:59 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/04 20:14:14 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/04 22:19:53 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f) (char*))
-{
-	int i;
+#include "ft.h"
+#include <unistd.h>
 
-	i = 0;
-	while (tab[i])
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	unsigned int nbr;
+
+	if (nb < 0)
 	{
-		if ((*f)(tab[i]) == 1)
-			return (1);
-		i++;
+		ft_putchar('-');
+		nbr = -nb;
 	}
-	return (0);
+	else
+		nbr = nb;
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + '0');
 }

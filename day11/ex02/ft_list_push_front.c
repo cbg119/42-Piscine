@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/04 12:44:13 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/04 23:56:59 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/05 18:14:56 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/05 18:57:09 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_any(char **tab, int (*f) (char*))
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	int i;
+	t_list *new_head;
 
-	i = 0;
-	while (tab[i])
+	if (*begin_list)
 	{
-		if ((*f)(tab[i]) == 1)
-			return (1);
-		i++;
+		new_head = ft_create_elem(data);
+		new_head->next = *begin_list;
+		*begin_list = new_head;
 	}
-	return (0);
+	else
+		*begin_list = ft_create_elem(data);
 }

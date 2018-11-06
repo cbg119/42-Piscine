@@ -3,9 +3,9 @@ SOURCES = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c s
 OBJECT_FILES = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 HEADERS = includes
 
-all:	create_library
+all:	$(FILE)
 
-create_library:
+$(FILE):
 	gcc -Wall -Wextra -Werror -I $(HEADERS) -c $(SOURCES)
 	ar -rv $(FILE) $(OBJECT_FILES)
 	ranlib $(FILE)
