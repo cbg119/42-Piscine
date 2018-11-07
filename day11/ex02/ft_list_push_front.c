@@ -6,9 +6,11 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/05 18:14:56 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/05 18:57:09 by cbagdon          ###   ########.fr       */
+/*   Updated: 2018/11/06 11:40:38 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_list.h"
 
 void	ft_list_push_front(t_list **begin_list, void *data)
 {

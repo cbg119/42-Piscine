@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_push_params.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/05 16:13:32 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/06 11:33:21 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/06 11:44:56 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/06 12:47:09 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+t_list	*ft_list_push_params(int ac, char **av)
 {
-	t_list *current;
+	t_list	*temp_list;
+	t_list	*current_item;
+	int		index;
 
-	if (begin_list)
+	index = 0;
+	if (ac <= 0)
+		return (0);
+	temp_list = 0;
+	while (index < ac)
 	{
-		current = *begin_list;
-		while (current->next)
-			current = current->next;
-		current->next = ft_create_elem(data);
+		current_item = ft_create_elem(av[index]);
+		current_item->next = temp_list;
+		temp_list = current_item;
+		index++;
 	}
-	else
-		*begin_list = ft_create_elem(data);
+	return (current_item);
 }

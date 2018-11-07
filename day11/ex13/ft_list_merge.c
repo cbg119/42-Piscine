@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/05 16:13:32 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/06 11:33:21 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/06 20:45:58 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/06 22:29:11 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
-	t_list *current;
+	t_list *current_space;
 
-	if (begin_list)
-	{
-		current = *begin_list;
-		while (current->next)
-			current = current->next;
-		current->next = ft_create_elem(data);
-	}
+	if (!(*begin_list1) || !begin_list)
+		*begin_list1 = begin_list2;
 	else
-		*begin_list = ft_create_elem(data);
+	{
+		current_space = *begin_list1;
+		while (current_space->next)
+			current_space = current_space->next;
+		current_space->next = begin_list2;
+	}
 }

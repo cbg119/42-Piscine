@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/05 16:13:32 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/06 11:33:21 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/06 10:54:41 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/06 12:42:10 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+int		ft_list_size(t_list *begin_list)
 {
-	t_list *current;
+	t_list		*head;
+	int			counter;
 
-	if (begin_list)
+	if (!begin_list)
+		return (0);
+	head = begin_list;
+	counter = 1;
+	while (head->next)
 	{
-		current = *begin_list;
-		while (current->next)
-			current = current->next;
-		current->next = ft_create_elem(data);
+		head = head->next;
+		counter++;
 	}
-	else
-		*begin_list = ft_create_elem(data);
+	return (counter);
 }
