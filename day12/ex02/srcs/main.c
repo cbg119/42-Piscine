@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_merge.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 20:45:58 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/07 19:59:08 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/07 18:33:22 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/07 18:46:14 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <errno.h>
 
-void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
+int		main(int argc, char *argv[])
 {
-	t_list *current_space;
+	int		j;
+	int		fd;
+	int		counter;
+	char	bufffer[4096];
 
-	if (!(*begin_list1) || !begin_list1)
-		*begin_list1 = begin_list2;
-	else
-	{
-		current_space = *begin_list1;
-		while (current_space->next)
-			current_space = current_space->next;
-		current_space->next = begin_list2;
-	}
+	if (!(argc >= 2))
+		return (1);
 }
