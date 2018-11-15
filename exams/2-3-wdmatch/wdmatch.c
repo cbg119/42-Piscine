@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brainfuck.c                                        :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 22:28:23 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/14 22:38:39 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/15 14:46:09 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/15 14:50:04 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 
-void	brainfuck(char *str)
+void	wdmatch(char *str1, char *str2)
 {
+	int		len;
 	int		i;
-	char	*ptr;
 
-	ptr = malloc(sizeof(char) * 2048);
-	while (str[i])
-	{
-		ptr += (str[i] == '>') ? 1 : 0;
-		ptr -= (str[i] == '<') ? 1 : 0;
-		*ptr += (str[i] == '+') ? 1 : 0;
-		*ptr -= (str[i] == '-') ? 1 : 0;
-		if (str[i] == '.')
-			write(1, ptr, 1);
-		if (str[i] == '[')
-		{
-			while (str[i] != ']')
-				i++;
-			i++;
-		}
-		if (str[i] == ']')
-		{
-			while (str[i] != '[')
-				i++;
-			i++;
-		}
-		i++;
-	}
+	i = 0;
+	len = 0;
+	while (str1[len])
+		len++;
+	while (i < len && *str2)
+		(str1[i] == *str2++) ? i++ : 0;
+	if (i == len)
+		write(1, str1, len);
+}
+
+int		main(int argc, char *argv[])
+{
+	if (argc == 3)
+		wdmatch(argv[1], argv[2]);
 	write(1, "\n", 1);
+	return (0);
 }

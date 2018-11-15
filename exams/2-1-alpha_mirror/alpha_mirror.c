@@ -1,45 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brainfuck.c                                        :+:      :+:    :+:   */
+/*   alpha_mirror.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 22:28:23 by cbagdon           #+#    #+#             */
-/*   Updated: 2018/11/14 22:38:39 by cbagdon          ###   ########.fr       */
+/*   Created: 2018/11/15 10:49:26 by cbagdon           #+#    #+#             */
+/*   Updated: 2018/11/15 11:00:01 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 
-void	brainfuck(char *str)
+int		is_alpha(char c)
+{
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+}
+
+int		main(int argc, char *argv[])
 {
 	int		i;
-	char	*ptr;
 
-	ptr = malloc(sizeof(char) * 2048);
-	while (str[i])
+	if (argc == 2)
 	{
-		ptr += (str[i] == '>') ? 1 : 0;
-		ptr -= (str[i] == '<') ? 1 : 0;
-		*ptr += (str[i] == '+') ? 1 : 0;
-		*ptr -= (str[i] == '-') ? 1 : 0;
-		if (str[i] == '.')
-			write(1, ptr, 1);
-		if (str[i] == '[')
+		i = 0;
+		while (argv[1][i])
 		{
-			while (str[i] != ']')
-				i++;
+			if (is_alpha(argv[1][i]) && (argv[1][i] >= 'a' && argv[1][i] <= 'z'))
+				argv[1][i] = 'z' - (argv[1][i] - 'a');
+			else if (is_alpha(argv[1][i]) && (argv[1][i] >= 'A' && argv[1][i] <= 'Z'))
+				argv[1][i] = 'Z' - (argv[1][i] - 'A');
+			write(1, &argv[1][i], 1);
 			i++;
 		}
-		if (str[i] == ']')
-		{
-			while (str[i] != '[')
-				i++;
-			i++;
-		}
-		i++;
 	}
 	write(1, "\n", 1);
+	return (0);
 }
